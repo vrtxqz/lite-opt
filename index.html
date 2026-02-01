@@ -8,28 +8,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
+        /* Hiệu ứng Nền Animated Gradient */
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: #000000;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(125deg, #000000, #001a33, #003366, #000000);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite; /* Chuyển động ngẫu nhiên chậm rãi */
             color: #f5f5f7;
             text-align: center;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
         }
 
-        /* Navbar: Logo bên trái, kích thước lớn hơn */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Navbar */
         nav {
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(0, 0, 0, 0.4); /* Trong suốt hơn để thấy nền động */
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            padding: 10px 0; /* Thu nhỏ padding nav một chút để logo nổi bật */
+            padding: 10px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 100;
-            border-bottom: 0.5px solid #222;
+            border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
         }
 
         .nav-container {
@@ -40,11 +48,9 @@
             padding: 0 24px;
         }
 
-        /* Kích thước logo Navbar đã được tăng lên */
         .nav-logo {
             height: 32px; 
             width: auto;
-            display: block;
         }
 
         .nav-brand {
@@ -53,10 +59,9 @@
             font-size: 17px;
             font-weight: 600;
             margin-left: 12px;
-            letter-spacing: -0.01em;
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
             padding-top: 200px;
             padding-bottom: 80px;
@@ -65,17 +70,14 @@
         h1 {
             font-size: clamp(40px, 8vw, 64px);
             font-weight: 600;
-            letter-spacing: -0.02em;
             margin-bottom: 15px;
-            background: linear-gradient(#ffffff, #a1a1a6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #ffffff;
+            text-shadow: 0 0 30px rgba(0, 113, 227, 0.3);
         }
 
         p.tagline {
             font-size: clamp(18px, 4vw, 24px);
             font-weight: 500;
-            color: #f5f5f7;
             margin-bottom: 24px;
         }
 
@@ -83,7 +85,7 @@
             max-width: 600px;
             margin: 0 auto 40px;
             line-height: 1.6;
-            color: #86868b;
+            color: rgba(255, 255, 255, 0.7);
             font-size: 18px;
             padding: 0 20px;
         }
@@ -104,12 +106,10 @@
         }
 
         .btn-download:hover {
-            background-color: #0077ed;
             transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(0, 113, 227, 0.4);
+            box-shadow: 0 0 30px rgba(0, 113, 227, 0.6);
         }
 
-        /* Hiệu ứng "Soẹt" */
         .btn-download::after {
             content: '';
             position: absolute;
@@ -117,12 +117,7 @@
             left: -150%;
             width: 50%;
             height: 200%;
-            background: linear-gradient(
-                to right,
-                transparent,
-                rgba(255, 255, 255, 0.4),
-                transparent
-            );
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
             transform: rotate(30deg);
         }
 
@@ -135,12 +130,11 @@
             display: block;
             margin-top: 14px;
             font-size: 13px;
-            color: #00ff73;
+            color: #00ffca; /* Xanh ngọc cho hợp tone xanh dương */
             font-weight: 500;
-            opacity: 0.9;
         }
 
-        /* Socials */
+        /* Social Links */
         .social-links {
             margin-top: 40px;
             display: flex;
@@ -149,7 +143,7 @@
         }
 
         .social-links a {
-            color: #86868b;
+            color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;
@@ -170,28 +164,15 @@
             padding: 0 20px;
         }
 
-        .feature-item {
-            max-width: 280px;
-        }
-
-        .feature-item h3 { 
-            font-size: 20px; 
-            font-weight: 600;
-            margin-bottom: 10px; 
-        }
-
-        .feature-item p { 
-            color: #86868b; 
-            font-size: 15px; 
-            line-height: 1.5;
-        }
+        .feature-item h3 { font-size: 20px; font-weight: 600; margin-bottom: 10px; }
+        .feature-item p { color: rgba(255, 255, 255, 0.6); font-size: 15px; line-height: 1.5; max-width: 280px;}
 
         footer {
             margin-top: 100px;
             padding: 40px 0;
-            border-top: 0.5px solid #222;
+            border-top: 0.5px solid rgba(255, 255, 255, 0.1);
             font-size: 12px;
-            color: #424245;
+            color: rgba(255, 255, 255, 0.3);
         }
     </style>
 </head>
@@ -217,7 +198,7 @@
 
         <div class="social-links">
             <a href="https://youtube.com/@LiteOptimizer" target="_blank">YouTube</a>
-            <a href="https://discord.com" target="_blank">Discord</a>
+            <a href="#" target="_blank">Discord</a>
         </div>
     </div>
 
@@ -237,7 +218,7 @@
     </div>
 
     <footer>
-        &copy; 2026 vrtxqz. Designed for simplicity.
+        &copy; 2026 Vrtxqz. Designed for simplicity.
     </footer>
 
 </body>
