@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LiteOptimizer — Minimal. Smooth. Fast.</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <style>
-        /* Apple-esque Dark Aesthetic */
+        /* Toàn bộ giao diện Dark Mode */
         body {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: #000000;
             color: #f5f5f7;
             text-align: center;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Minimalist Navigation */
+        /* Thanh Menu mờ ảo kiểu Glassmorphism */
         nav {
             background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(20px);
@@ -33,49 +37,48 @@
             color: #f5f5f7;
             text-decoration: none;
             font-size: 14px;
-            font-weight: 400;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
 
-        nav a:hover { opacity: 1; }
-
-        /* Hero Section */
+        /* Phần nội dung chính (Hero) */
         .hero {
             padding-top: 180px;
             padding-bottom: 80px;
         }
 
         h1 {
-            font-size: 64px;
+            font-size: clamp(40px, 8vw, 64px); /* Tự co giãn theo màn hình */
             font-weight: 600;
-            letter-spacing: -0.015em;
-            margin-bottom: 12px;
-            background: -webkit-linear-gradient(#fff, #888);
+            letter-spacing: -0.02em;
+            margin-bottom: 15px;
+            /* Hiệu ứng chữ đổ màu bạc */
+            background: linear-gradient(#ffffff, #a1a1a6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         p.tagline {
-            font-size: 26px;
+            font-size: clamp(18px, 4vw, 24px);
             font-weight: 500;
             color: #f5f5f7;
             margin-bottom: 24px;
         }
 
         .description {
-            max-width: 650px;
+            max-width: 600px;
             margin: 0 auto 45px;
             line-height: 1.6;
             color: #86868b;
-            font-size: 19px;
+            font-size: 18px;
+            padding: 0 20px;
         }
 
-        /* Call to Action Button */
+        /* Nút Download xanh chuẩn Apple */
         .btn-download {
             background-color: #0071e3;
             color: white;
-            padding: 14px 34px;
+            padding: 14px 32px;
             border-radius: 980px;
             font-size: 17px;
             font-weight: 500;
@@ -86,16 +89,17 @@
 
         .btn-download:hover {
             background-color: #0077ed;
-            transform: scale(1.05);
+            transform: scale(1.05); /* Phóng to nhẹ khi di chuột */
+            box-shadow: 0 0 20px rgba(0, 113, 227, 0.4);
         }
 
-        /* Features Section */
+        /* Các tính năng nổi bật */
         .features {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 60px;
-            margin-top: 100px;
+            gap: 50px;
+            margin-top: 80px;
             padding: 0 20px;
         }
 
@@ -104,9 +108,9 @@
         }
 
         .feature-item h3 { 
-            font-size: 22px; 
+            font-size: 20px; 
             font-weight: 600;
-            margin-bottom: 12px; 
+            margin-bottom: 10px; 
         }
 
         .feature-item p { 
@@ -115,16 +119,13 @@
             line-height: 1.5;
         }
 
+        /* Chân trang */
         footer {
-            margin-top: 120px;
-            padding: 50px 0;
+            margin-top: 100px;
+            padding: 40px 0;
             border-top: 0.5px solid #222;
-            font-size: 13px;
+            font-size: 12px;
             color: #424245;
-        }
-
-        html {
-            scroll-behavior: smooth;
         }
     </style>
 </head>
@@ -139,7 +140,7 @@
         <p class="tagline">Minimalist core. Maximum performance.</p>
         
         <div class="description">
-            LiteOptimizer refines your Windows experience by removing unnecessary background processes and optimizing system resources. Make your low-end PC feel brand new again.
+            Experience Windows the way it was meant to be. LiteOptimizer cleans background clutter and tunes your system for a smoother, faster workflow.
         </div>
 
         <a href="#" class="btn-download">Download Installer</a>
@@ -148,8 +149,21 @@
     <div class="features">
         <div class="feature-item">
             <h3>Ultra Lightweight</h3>
-            <p>Designed to run with near-zero impact on your system memory.</p>
+            <p>Runs efficiently with zero bloatware and minimal RAM usage.</p>
         </div>
         <div class="feature-item">
-            <h3>Minimalist Design</h3>
-            <p>
+            <h3>Native UI</h3>
+            <p>Simple and clean interface designed for quick navigation.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Total Control</h3>
+            <p>Optimize only what you need to keep your PC stable and responsive.</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Vrtxqz. Designed for simplicity.
+    </footer>
+
+</body>
+</html>
