@@ -120,32 +120,49 @@
             font-size: 19px;
         }
 
-        /* Shiny Button */
+        /* Nút Download kiểu Ghost (Viền trắng, trong đen) */
         .btn-download {
-            background-color: #fff;
-            color: #000;
-            padding: 16px 38px;
+            background-color: #000000; /* Nền trong đen */
+            color: #ffffff; /* Chữ trắng */
+            padding: 14px 36px;
             border-radius: 980px;
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 17px;
+            font-weight: 500;
             text-decoration: none;
             display: inline-block;
             position: relative;
             overflow: hidden;
-            transition: all 0.3s ease;
+            border: 1.5px solid #ffffff; /* Viền trắng mảnh cực sang */
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .btn-download:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(255, 255, 255, 0.3); }
+        .btn-download:hover {
+            transform: scale(1.05);
+            background-color: #111111; /* Hơi sáng lên một tí khi hover */
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
 
+        /* Hiệu ứng Shimmer (Ánh sáng soẹt qua) - Hiện rất rõ trên nền đen */
         .btn-download::after {
             content: '';
             position: absolute;
-            top: -50%; left: -150%; width: 50%; height: 200%;
-            background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1), transparent);
+            top: -50%;
+            left: -150%;
+            width: 50%;
+            height: 200%;
+            background: linear-gradient(
+                to right,
+                transparent,
+                rgba(255, 255, 255, 0.4), /* Luồng sáng trắng */
+                transparent
+            );
             transform: rotate(30deg);
         }
 
-        .btn-download:hover::after { left: 150%; transition: all 0.7s ease-in-out; }
+        .btn-download:hover::after {
+            left: 150%;
+            transition: all 0.7s ease-in-out;
+        }
 
         .free-label { display: block; margin-top: 15px; font-size: 14px; color: #fff; opacity: 0.6; }
 
